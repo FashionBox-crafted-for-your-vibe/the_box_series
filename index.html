@@ -199,15 +199,13 @@
       }
 
       /* SHOW MOBILE IMAGE */
-    .mobile-hero-image{
-     display:block;
-     width:100vw;         /* full viewport width */
-     max-width:none;       /* remove any max-width limit */
-     height:auto;
-     margin:0 0 20px 0;   /* no auto margins */
-     border-radius:0;      /* optional: remove rounded corners for fullscreen feel */
-   } 
-
+      .mobile-hero-image{
+        display:block;
+        width:100%;
+        max-width:360px;
+        margin:0 auto 20px auto;
+        border-radius:12px;
+      }
 
       .hero{
        min-height:100vh;
@@ -253,10 +251,16 @@
     <div class="card">
       <h3>Episode 1 — The Arrival</h3>
       <p>The box appears. Nothing stays normal.</p>
+      <video controls style="width:100%; height:auto;" poster="https://github.com/FashionBox-crafted-for-your-vibe/the_box_series/blob/5fb88da39ea16273f6b09dfc6482a6c2bbd2ffd2/ChatGPT%20Image%20Feb%203%2C%202026%2C%2005_26_39%20PM.png">
+          <source src="https://github.com/FashionBox-crafted-for-your-vibe/the_box_series/blob/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4"
+      </video>
     </div>
     <div class="card">
       <h3>Episode 2 — Secrets Within</h3>
       <p>Truths surface. Fear deepens.</p>
+      <video controls style="width:100%; height:auto;">
+          <source src="https://github.com/FashionBox-crafted-for-your-vibe/the_box_series/blob/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4"
+      </video>
     </div>
   </div>
 </section>
@@ -291,5 +295,3 @@
 
 </body>
 </html>
-
-
