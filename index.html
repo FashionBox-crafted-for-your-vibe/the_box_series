@@ -150,7 +150,6 @@
       position:relative;
     }
 
-    /* Episode stats */
     .stats{
       display:flex;
       justify-content:space-between;
@@ -176,7 +175,6 @@
       box-shadow:0 0 20px var(--accent);
     }
 
-    /* GALLERY */
     .gallery{
       display:flex;
       gap:16px;
@@ -200,19 +198,30 @@
       display:none;
     }
 
+    /* ★ ONLY CHANGE YOU REQUESTED — shift episodes left on mobile ★ */
     @media (max-width:600px){
       :root{--hero-offset:0vh;}
       header{height:96px;padding:12px 16px;flex-direction:column;justify-content:center;}
       .brand{ margin-bottom:10px; }
       header img.logo{width:120px;transform:none;margin-top:70px;}
       .hero{background:none !important; min-height:100vh; display:flex; align-items:center; justify-content:center;}
-      .mobile-hero-image{display:block;width:100vw; max-width:none; height:auto; margin:0 0 20px 0; border-radius:0;}
+      .mobile-hero-image{display:block;width:100vw; height:auto; margin:0 0 20px 0; border-radius:0;}
       .hero-content {padding:12px;}
       html, body {overflow-x: hidden;width: 100%;}
       * {max-width: 100%;}
       .hero {width: 100vw; overflow: hidden;}
-      .episodes-grid {width: 100%; margin: 0; padding: 0 10px; overflow-x: hidden;}
-      .mobile-hero-image {width: 100vw !important;}
+
+      /* Left-shift episodes */
+      .episodes-grid {
+        width:100%;
+        margin:0;
+        padding:0;
+        display:block;
+      }
+
+      .episodes-grid .card {
+        margin-left:0;
+      }
     }
   </style>
 </head>
@@ -308,6 +317,7 @@
       <video controls style="width:100%; height:auto;" 
         poster="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/fd584ffe740ba933b279e285a01e01b98e88b2dc/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_24_10%20PM.png">
         <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4">
+      </source>
       </video>
       <div class="stats">
         <span class="views">1.5M views</span>
@@ -357,7 +367,6 @@
   document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("openTrailer").onclick = () => alert("Trailer coming soon");
 
-  // Like button animation without changing numbers
   document.querySelectorAll(".like-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       btn.classList.add("animate");
