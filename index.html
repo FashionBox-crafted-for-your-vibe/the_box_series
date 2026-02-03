@@ -169,12 +169,11 @@
       color:#bdbdbd;
     }
 
-    /* MOBILE HERO IMAGE HIDDEN BY DEFAULT */
     .mobile-hero-image{
       display:none;
     }
 
-    /* MOBILE ONLY STYLES */
+    /* MOBILE ONLY */
     @media (max-width:600px){
 
       :root{
@@ -196,7 +195,6 @@
         margin-top:70px;
       }
 
-      /* REMOVE HERO BACKGROUND ONLY ON MOBILE */
       .hero{
         background:none !important;
         min-height:100vh;
@@ -205,20 +203,47 @@
         justify-content:center;
       }
 
-      /* SHOW MOBILE IMAGE FULL WIDTH */
       .mobile-hero-image{
         display:block;
-        width:100vw;       /* full viewport width */
-        max-width:none;     /* remove any restriction */
-        height:auto;        /* maintain aspect ratio */
-        margin:0 0 20px 0;  /* space below */
-        border-radius:0;    /* optional: fullscreen feel */
+        width:100vw;
+        max-width:none;
+        height:auto;
+        margin:0 0 20px 0;
+        border-radius:0;
       }
 
-      /* Reduce padding of hero-content to fit bigger image */
       .hero-content {
         padding:12px;
       }
+
+      /* ------------------------------------------------------ */
+      /*   FIX: REMOVE RIGHT-SIDE BLANK SPACE ON MOBILE        */
+      /* ------------------------------------------------------ */
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      * {
+        max-width: 100%;
+      }
+
+      .hero {
+        width: 100vw;
+        overflow: hidden;
+      }
+
+      .episodes-grid {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+        overflow-x: hidden;
+      }
+
+      .mobile-hero-image {
+        width: 100vw !important;
+      }
+      /* ------------------------------------------------------ */
 
     }
   </style>
@@ -237,7 +262,6 @@
 <section class="hero" id="home">
   <div class="hero-content">
 
-    <!-- MOBILE-ONLY IMAGE (HIDDEN ON DESKTOP) -->
     <img class="mobile-hero-image"
       src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ab771fa25e4beba5ddf3a1812851c59325bafa52/ChatGPT%20Image%20Feb%202%2C%202026%2C%2001_58_17%20PM.png"
       alt="Mobile Hero">
@@ -258,7 +282,6 @@
   <h2>Episodes</h2>
   <div class="episodes-grid">
 
-    <!-- EPISODE 1 -->
     <div class="card">
       <h3>Episode 1 — The Arrival</h3>
       <p>The box appears. Nothing stays normal.</p>
@@ -268,7 +291,6 @@
       </video>
     </div>
 
-    <!-- EPISODE 2 -->
     <div class="card">
       <h3>Episode 2 — Secrets Within</h3>
       <p>Truths surface. Fear deepens.</p>
@@ -278,7 +300,6 @@
       </video>
     </div>
 
-    <!-- EPISODE 3 -->
     <div class="card">
       <h3>Episode 3 — The Opening</h3>
       <p>The box reveals its first secret… and it’s worse than imagined.</p>
@@ -288,7 +309,6 @@
       </video>
     </div>
 
-    <!-- EPISODE 4 -->
     <div class="card">
       <h3>Episode 4 — Echoes</h3>
       <p>Voices emerge from the darkness. Something watches back.</p>
@@ -298,7 +318,6 @@
       </video>
     </div>
 
-    <!-- EPISODE 5 -->
     <div class="card">
       <h3>Episode 5 — Shattered</h3>
       <p>Reality bends. The past resurfaces with force.</p>
@@ -308,7 +327,6 @@
       </video>
     </div>
 
-    <!-- EPISODE 6 -->
     <div class="card">
       <h3>Episode 6 — The Depths</h3>
       <p>The truth behind the box finally begins to emerge.</p>
