@@ -143,7 +143,6 @@
       padding:10px;
     }
 
-
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
       padding:14px;
@@ -170,11 +169,12 @@
       color:#bdbdbd;
     }
 
-    /* 🔥🔥 MOBILE-ONLY CHANGES — DO NOT TOUCH DESKTOP 🔥🔥 */
+    /* MOBILE HERO IMAGE HIDDEN BY DEFAULT */
     .mobile-hero-image{
       display:none;
     }
 
+    /* MOBILE ONLY STYLES */
     @media (max-width:600px){
 
       :root{
@@ -199,21 +199,27 @@
       /* REMOVE HERO BACKGROUND ONLY ON MOBILE */
       .hero{
         background:none !important;
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
       }
 
-      /* SHOW MOBILE IMAGE */
+      /* SHOW MOBILE IMAGE FULL WIDTH */
       .mobile-hero-image{
         display:block;
-        width:100%;
-        max-width:360px;
-        margin:0 auto 20px auto;
-        border-radius:12px;
+        width:100vw;       /* full viewport width */
+        max-width:none;     /* remove any restriction */
+        height:auto;        /* maintain aspect ratio */
+        margin:0 0 20px 0;  /* space below */
+        border-radius:0;    /* optional: fullscreen feel */
       }
 
-      .hero{
-       min-height:100vh;
-       background-position:center center;
+      /* Reduce padding of hero-content to fit bigger image */
+      .hero-content {
+        padding:12px;
       }
+
     }
   </style>
 </head>
@@ -231,7 +237,7 @@
 <section class="hero" id="home">
   <div class="hero-content">
 
-    <!-- ✅ MOBILE-ONLY IMAGE (HIDDEN ON DESKTOP) -->
+    <!-- MOBILE-ONLY IMAGE (HIDDEN ON DESKTOP) -->
     <img class="mobile-hero-image"
       src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ab771fa25e4beba5ddf3a1812851c59325bafa52/ChatGPT%20Image%20Feb%202%2C%202026%2C%2001_58_17%20PM.png"
       alt="Mobile Hero">
@@ -262,7 +268,7 @@
       </video>
     </div>
 
-    <!-- EPISODE 2 (FIXED THUMBNAIL) -->
+    <!-- EPISODE 2 -->
     <div class="card">
       <h3>Episode 2 — Secrets Within</h3>
       <p>Truths surface. Fear deepens.</p>
@@ -277,8 +283,8 @@
       <h3>Episode 3 — The Opening</h3>
       <p>The box reveals its first secret… and it’s worse than imagined.</p>
       <video controls style="width:100%; height:auto;" 
-        poster="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/14af51ea94752573f96da0bb3d844ff7e43becb6/ChatGPT%20Image%20Feb%203%2C%202026%2C%2005_39_57%20PM.png"
-        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4" type="video/mp4">
+        poster="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/14af51ea94752573f96da0bb3d844ff7e43becb6/ChatGPT%20Image%20Feb%203%2C%202026%2C%2005_39_57%20PM.png">
+        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4">
       </video>
     </div>
 
@@ -287,8 +293,8 @@
       <h3>Episode 4 — Echoes</h3>
       <p>Voices emerge from the darkness. Something watches back.</p>
       <video controls style="width:100%; height:auto;" 
-        poster="https://github.com/FashionBox-crafted-for-your-vibe/the_box_series/blob/6b22da5d8bc22bc7a1373fae3a74690fca802b31/ChatGPT%20Image%20Feb%203%2C%202026%2C%2007_58_11%20PM.png">
-        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4" type="video/mp4">
+        poster="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/6b22da5d8bc22bc7a1373fae3a74690fca802b31/ChatGPT%20Image%20Feb%203%2C%202026%2C%2007_58_11%20PM.png">
+        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4">
       </video>
     </div>
 
@@ -298,7 +304,7 @@
       <p>Reality bends. The past resurfaces with force.</p>
       <video controls style="width:100%; height:auto;" 
         poster="YOUR_EPISODE_5_IMAGE_URL_HERE">
-        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4" type="video/mp4">
+        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4">
       </video>
     </div>
 
@@ -308,7 +314,7 @@
       <p>The truth behind the box finally begins to emerge.</p>
       <video controls style="width:100%; height:auto;" 
         poster="YOUR_EPISODE_6_IMAGE_URL_HERE">
-        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4" type="video/mp4">
+        <source src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/5da40a82cdac9f1ff9f3917901ec926fd9dca0d2/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4" type="video/mp4">
       </video>
     </div>
 
@@ -345,12 +351,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
