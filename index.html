@@ -4,12 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>THE BOX — Official Hub</title>
-  <meta name="description" content="THE BOX — cinematic mystery web series hub." />
 
   <style>
     :root{
-      --bg:#0b0602;
-      --panel:#120a03;
       --accent:#f5b233;
       --accent-2:#ff9f2c;
       --muted:rgba(255,255,255,0.92);
@@ -22,86 +19,87 @@
 
     *{box-sizing:border-box}
     html,body{
-      height:100%;
       margin:0;
-      background:linear-gradient(180deg,#070403 0%, #0b0602 70%);
+      background:#070403;
       color:#fff;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      font-family:Inter, system-ui, Arial;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
 
-    /* HEADER */
+    /* ================= HEADER (DESKTOP UNCHANGED) ================= */
     header{
       position:fixed;
-      top:0;left:0;right:0;
+      inset:0 0 auto 0;
       height:var(--header-height);
       display:flex;
       align-items:center;
       justify-content:space-between;
       padding:18px 28px;
-      z-index:999;
       backdrop-filter:blur(8px);
       background:linear-gradient(180deg, rgba(6,3,1,.6), rgba(6,3,1,.35));
-      border-bottom:1px solid rgba(255,255,255,.03);
+      z-index:999;
     }
 
-    .brand{display:flex;align-items:center;gap:18px}
+    .brand{
+      display:flex;
+      align-items:center;
+    }
 
-    header img.logo{
+    .logo{
       width:160px;
       transform:translateY(var(--logo-drop));
       filter:drop-shadow(0 12px 36px rgba(0,0,0,.6));
     }
 
-    nav{display:flex;gap:18px;align-items:center}
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+
     nav a{
-      color:var(--muted);
       font-weight:600;
       padding:8px 12px;
       border-radius:8px;
-      transition:.18s var(--ease);
-    }
-    nav a:hover{
-      color:#111;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      transform:translateY(-3px);
+      color:var(--muted);
     }
 
-    /* HERO */
+    nav a:hover{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#111;
+    }
+
+    /* ================= HERO ================= */
     .hero{
-      min-height:100vh;
       margin-top:var(--header-height);
+      min-height:100vh;
+      background:
+        url('https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box/ea4df26b5c3256928046f55c51d3119a6353b614/ChatGPT%20Image%20Feb%202%2C%202026%2C%2001_55_55%20PM.png')
+        center calc(50% + var(--hero-offset)) / cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
       position:relative;
-      overflow:hidden;
-      background:
-        url('https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box/ea4df26b5c3256928046f55c51d3119a6353b614/ChatGPT%20Image%20Feb%202%2C%202026%2C%2001_55_55%20PM.png')
-        center calc(50% + var(--hero-offset)) / cover no-repeat;
     }
 
     .hero::before{
       content:"";
       position:absolute;inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.65));
-      z-index:1;
+      background:linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.7));
     }
 
     .hero-content{
       position:relative;
-      z-index:5;
+      z-index:2;
       text-align:center;
       padding:28px;
-      max-width:1100px;
     }
 
     .tagline{
       font-size:18px;
-      color:var(--muted);
-      margin-bottom:16px;
+      margin-bottom:18px;
     }
 
     .controls{
@@ -112,14 +110,12 @@
     }
 
     .btn{
-      padding:12px 20px;
+      padding:12px 22px;
       border-radius:999px;
       font-weight:700;
-      border:1px solid rgba(255,255,255,.06);
-      background:rgba(0,0,0,.35);
-      color:var(--muted);
-      cursor:pointer;
-      transition:.18s var(--ease);
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(0,0,0,.4);
+      color:#fff;
     }
 
     .btn-primary{
@@ -127,42 +123,23 @@
       color:#111;
     }
 
-    .btn:hover{transform:translateY(-4px)}
-
-    main{background:#070403}
-
     section{
-      padding:72px 20px;
       max-width:var(--max-width);
       margin:auto;
-      color:var(--muted);
+      padding:72px 20px;
     }
 
     h2{
       text-align:center;
       color:var(--accent);
       margin-bottom:28px;
-      font-size:28px;
     }
 
-    .episodes-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:28px;
-    }
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      padding:14px;
-      border-radius:12px;
-    }
-
-    /* GALLERY */
     .gallery{
       display:flex;
       gap:16px;
-      flex-wrap:wrap;
       justify-content:center;
+      flex-wrap:wrap;
     }
 
     .gallery img{
@@ -173,34 +150,33 @@
     footer{
       text-align:center;
       padding:28px;
-      background:#070403;
-      color:#bdbdbd;
+      color:#bbb;
     }
 
-    /* MOBILE FIXES ONLY */
+    /* ================= MOBILE ONLY MAGIC ================= */
     @media (max-width:600px){
 
-      :root{
-        --hero-offset:0vh;
-      }
-
       header{
-        height:96px;
-        padding:12px 16px;
+        height:auto;
+        flex-direction:column;     /* STACK */
+        align-items:center;
+        gap:12px;
+        padding:16px 12px;
       }
 
-      header img.logo{
-        width:120px;
+      .logo{
+        width:200px;               /* BIG, PROUD LOGO */
         transform:none;
       }
 
-      .hero{
-        min-height:calc(100vh - 96px);
-        background-position:center center;
+      nav{
+        width:100%;
+        justify-content:space-around;
       }
 
-      nav a{
-        padding:6px 10px;
+      .hero{
+        margin-top:160px;          /* account for taller header */
+        background-position:center center;
       }
     }
   </style>
@@ -227,24 +203,8 @@
   <div class="hero-content">
     <p class="tagline">Some boxes are never meant to be opened.</p>
     <div class="controls">
-      <button class="btn btn-primary" id="openTrailer">Watch Trailer</button>
+      <button class="btn btn-primary">Watch Trailer</button>
       <a class="btn" href="#episodes">View Episodes</a>
-    </div>
-  </div>
-</section>
-
-<main>
-
-<section id="episodes">
-  <h2>Episodes</h2>
-  <div class="episodes-grid">
-    <div class="card">
-      <h3>Episode 1 — The Arrival</h3>
-      <p>The box appears. Nothing stays normal.</p>
-    </div>
-    <div class="card">
-      <h3>Episode 2 — Secrets Within</h3>
-      <p>Truths surface. Fear deepens.</p>
     </div>
   </div>
 </section>
@@ -252,30 +212,15 @@
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_34%20AM.png" alt="Gallery image 1">
-    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_45%20AM.png" alt="Gallery image 2">
-    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/e3aab6a79914cfe53495eb83a8b1e02ced6b4972/ChatGPT%20Image%20Feb%203%2C%202026%2C%2008_39_44%20AM.png" alt="Gallery image 3">
+    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_34%20AM.png">
+    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_45%20AM.png">
+    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/e3aab6a79914cfe53495eb83a8b1e02ced6b4972/ChatGPT%20Image%20Feb%203%2C%202026%2C%2008_39_44%20AM.png">
   </div>
 </section>
 
-<section id="about">
-  <h2>About</h2>
-  <p style="max-width:900px;margin:auto;text-align:center;line-height:1.6">
-    “THE BOX” is a cinematic mystery web series where every answer leads to a darker question.
-  </p>
-</section>
-
-</main>
-
 <footer>
-  © <span id="year"></span> THE BOX • A Cinematic Mystery Experience
+  © 2026 THE BOX • Cinematic Mystery Experience
 </footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.getElementById("openTrailer").onclick = () =>
-    alert("Trailer coming soon");
-</script>
 
 </body>
 </html>
