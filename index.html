@@ -85,7 +85,7 @@
     }
 
     .controls{
-      margin-top:200px; 
+      margin-top:200px;
       display:flex;
       gap:14px;
       justify-content:center;
@@ -94,7 +94,7 @@
 
     .tagline{
       font-size:22px;
-      margin-top:20px; 
+      margin-top:20px;
       color:var(--accent-2);
       font-family: "Cinzel", serif;
       text-shadow:0 0 12px rgba(255,153,51,0.45);
@@ -167,9 +167,11 @@
       color:#bdbdbd;
     }
 
-    /* ----------------------------------------------------------
-       MOBILE VIEW ONLY (YOUR REQUEST)
-    ----------------------------------------------------------*/
+    /* 🔥🔥 MOBILE-ONLY CHANGES — DO NOT TOUCH DESKTOP 🔥🔥 */
+    .mobile-hero-image{
+      display:none; /* HIDDEN ON DESKTOP */
+    }
+
     @media (max-width:600px){
 
       :root{
@@ -183,9 +185,7 @@
         justify-content:center;
       }
 
-      .brand{
-        margin-bottom:10px;
-      }
+      .brand{ margin-bottom:10px; }
 
       header img.logo{
         width:120px;
@@ -193,22 +193,23 @@
         margin-top:70px;
       }
 
-      /* REMOVE BACKGROUND IMAGE FOR MOBILE */
+      /* REMOVE HERO BACKGROUND ONLY ON MOBILE */
       .hero{
-        min-height:100vh;
-        background:none; /* <-- removed image ONLY for mobile */
+        background:none !important;
       }
 
-      /* SHOW IMAGE ABOVE BUTTONS ONLY IN MOBILE */
-      .mobile-hero-img{
+      /* SHOW MOBILE IMAGE */
+      .mobile-hero-image{
         display:block;
-        width:90%;
+        width:100%;
+        max-width:360px;
         margin:0 auto 20px auto;
         border-radius:12px;
       }
 
-      nav a{
-        padding:6px 10px;
+      .hero{
+       min-height:100vh;
+       background-position:center center;
       }
     }
   </style>
@@ -227,10 +228,10 @@
 <section class="hero" id="home">
   <div class="hero-content">
 
-    <!-- MOBILE-ONLY HERO IMAGE -->
-    <img class="mobile-hero-img"
-      src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box/ea4df26b5c3256928046f55c51d3119a6353b614/ChatGPT%20Image%20Feb%202%2C%202026%2C%2001_55_55%20PM.png"
-      alt="Hero image">
+    <!-- ✅ MOBILE-ONLY IMAGE (HIDDEN ON DESKTOP) -->
+    <img class="mobile-hero-image"
+      src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ab771fa25e4beba5ddf3a1812851c59325bafa52/ChatGPT%20Image%20Feb%202%2C%202026%2C%2001_58_17%20PM.png"
+      alt="Mobile Hero">
 
     <div class="controls">
       <button class="btn btn-primary" id="openTrailer">Watch Trailer</button>
@@ -243,7 +244,37 @@
 </section>
 
 <main>
-  <!-- unchanged content below -->
+
+<section id="episodes">
+  <h2>Episodes</h2>
+  <div class="episodes-grid">
+    <div class="card">
+      <h3>Episode 1 — The Arrival</h3>
+      <p>The box appears. Nothing stays normal.</p>
+    </div>
+    <div class="card">
+      <h3>Episode 2 — Secrets Within</h3>
+      <p>Truths surface. Fear deepens.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_34%20AM.png" alt="Gallery image 1">
+    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_45%20AM.png" alt="Gallery image 2">
+    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/e3aab6a79914cfe53495eb83a8b1e02ced6b4972/ChatGPT%20Image%20Feb%203%2C%202026%2C%2008_39_44%20AM.png" alt="Gallery image 3">
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p style="max-width:900px;margin:auto;text-align:center;line-height:1.6">
+    “THE BOX” is a cinematic mystery web series where every answer leads to a darker question.
+  </p>
+</section>
+
 </main>
 
 <footer>
