@@ -26,7 +26,7 @@ body{
 
 img{max-width:100%;display:block}
 
-/* ================= HEADER ================= */
+/* ================= HEADER (DESKTOP UNCHANGED) ================= */
 header{
   position:fixed;
   top:0;left:0;right:0;
@@ -62,7 +62,7 @@ nav a:hover{
   color:#111;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO (DESKTOP) ================= */
 .hero{
   min-height:100vh;
   margin-top:var(--header-height);
@@ -154,20 +154,18 @@ footer{
   color:#bbb;
 }
 
-/* ================= MOBILE FIXES ONLY ================= */
+/* ================= MOBILE FIX (IMPORTANT PART) ================= */
 @media(max-width:600px){
-
-  :root{--hero-offset:0}
 
   header{
     height:auto;
     padding:12px 14px 10px;
     flex-direction:column;
-    gap:6px;             /* FIX: reduce gap */
+    gap:6px;
   }
 
   header img.logo{
-    width:150px;         /* FIX: balanced logo size */
+    width:150px;
   }
 
   nav{
@@ -179,9 +177,18 @@ footer{
     font-size:14px;
   }
 
+  /* 🔥 FIX: SHOW FULL BACKGROUND IMAGE ON MOBILE */
   .hero{
-    margin-top:140px;    /* FIX: less vertical push */
-    background-position:center;
+    margin-top:140px;
+    min-height:auto;
+    padding:120px 16px 140px; /* gives image breathing room */
+    background-size:contain;  /* FULL IMAGE VISIBLE */
+    background-position:center top;
+    background-color:#000;
+  }
+
+  .hero::before{
+    background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.85));
   }
 }
 </style>
