@@ -199,14 +199,15 @@
       }
 
       /* SHOW MOBILE IMAGE */
-      .mobile-hero-image{
-        display:block;
-        width:100%;
-        max-width:100%;
-        height:auto;
-        margin:0 auto 20px auto;
-        border-radius:12px;
-      }
+    .mobile-hero-image{
+     display:block;
+     width:100vw;         /* full viewport width */
+     max-width:none;       /* remove any max-width limit */
+     height:auto;
+     margin:0 0 20px 0;   /* no auto margins */
+     border-radius:0;      /* optional: remove rounded corners for fullscreen feel */
+   } 
+
 
       .hero{
        min-height:100vh;
@@ -290,4 +291,5 @@
 
 </body>
 </html>
+
 
