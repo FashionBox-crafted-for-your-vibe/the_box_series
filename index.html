@@ -48,6 +48,7 @@
     }
 
     .brand{display:flex;align-items:center;gap:18px}
+
     header img.logo{
       width:160px;
       transform:translateY(var(--logo-drop));
@@ -66,7 +67,6 @@
       color:#111;
       background:linear-gradient(90deg,var(--accent),var(--accent-2));
       transform:translateY(-3px);
-      box-shadow:0 8px 30px rgba(255,159,44,.06);
     }
 
     /* HERO */
@@ -86,7 +86,7 @@
     .hero::before{
       content:"";
       position:absolute;inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.6));
+      background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.65));
       z-index:1;
     }
 
@@ -125,7 +125,6 @@
     .btn-primary{
       background:linear-gradient(90deg,var(--accent),var(--accent-2));
       color:#111;
-      box-shadow:0 14px 40px rgba(245,178,51,.18);
     }
 
     .btn:hover{transform:translateY(-4px)}
@@ -178,9 +177,31 @@
       color:#bdbdbd;
     }
 
-    @media(max-width:600px){
-      header{height:96px;padding:12px 16px}
-      header img.logo{width:110px}
+    /* MOBILE FIXES ONLY */
+    @media (max-width:600px){
+
+      :root{
+        --hero-offset:0vh;
+      }
+
+      header{
+        height:96px;
+        padding:12px 16px;
+      }
+
+      header img.logo{
+        width:120px;
+        transform:none;
+      }
+
+      .hero{
+        min-height:calc(100vh - 96px);
+        background-position:center center;
+      }
+
+      nav a{
+        padding:6px 10px;
+      }
     }
   </style>
 </head>
@@ -205,7 +226,6 @@
 <section class="hero" id="home">
   <div class="hero-content">
     <p class="tagline">Some boxes are never meant to be opened.</p>
-
     <div class="controls">
       <button class="btn btn-primary" id="openTrailer">Watch Trailer</button>
       <a class="btn" href="#episodes">View Episodes</a>
@@ -220,11 +240,11 @@
   <div class="episodes-grid">
     <div class="card">
       <h3>Episode 1 — The Arrival</h3>
-      <p>When the box appears, the town’s quiet life fractures.</p>
+      <p>The box appears. Nothing stays normal.</p>
     </div>
     <div class="card">
       <h3>Episode 2 — Secrets Within</h3>
-      <p>Clues surface, alliances shift, and danger grows.</p>
+      <p>Truths surface. Fear deepens.</p>
     </div>
   </div>
 </section>
@@ -234,16 +254,14 @@
   <div class="gallery">
     <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_34%20AM.png" alt="Gallery image 1">
     <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_03_45%20AM.png" alt="Gallery image 2">
-    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/ec2183991ac85c6ad7e9930fdb08618a39ddf564/ChatGPT%20Image%20Feb%203%2C%202026%2C%2009_04_02%20AM.png" alt="Gallery image 3">
+    <img src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box_series/e3aab6a79914cfe53495eb83a8b1e02ced6b4972/ChatGPT%20Image%20Feb%203%2C%202026%2C%2008_39_44%20AM.png" alt="Gallery image 3">
   </div>
 </section>
 
 <section id="about">
   <h2>About</h2>
   <p style="max-width:900px;margin:auto;text-align:center;line-height:1.6">
-    “THE BOX” is a cinematic mystery web series blending psychological tension,
-    supernatural intrigue, and haunting visuals—where every revelation raises
-    a darker question.
+    “THE BOX” is a cinematic mystery web series where every answer leads to a darker question.
   </p>
 </section>
 
@@ -256,7 +274,7 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("openTrailer").onclick = () =>
-    alert("Trailer modal coming soon");
+    alert("Trailer coming soon");
 </script>
 
 </body>
