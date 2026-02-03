@@ -39,7 +39,7 @@
       height:var(--header-height);
       display:flex;
       align-items:center;
-      justify-content:space-between;
+      justify-content:center;
       padding:18px 28px;
       z-index:999;
       backdrop-filter:blur(8px);
@@ -53,20 +53,6 @@
       width:160px;
       transform:translateY(var(--logo-drop));
       filter:drop-shadow(0 12px 36px rgba(0,0,0,.6));
-    }
-
-    nav{display:flex;gap:18px;align-items:center}
-    nav a{
-      color:var(--muted);
-      font-weight:600;
-      padding:8px 12px;
-      border-radius:8px;
-      transition:.18s var(--ease);
-    }
-    nav a:hover{
-      color:#111;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      transform:translateY(-3px);
     }
 
     /* HERO */
@@ -98,17 +84,22 @@
       max-width:1100px;
     }
 
-    .tagline{
-      font-size:18px;
-      color:var(--muted);
-      margin-bottom:16px;
-    }
-
+    /* SHIFT DOWNWARD — ONLY CHANGE */
     .controls{
+      margin-top:200px; /* shifted further downward */
       display:flex;
       gap:14px;
       justify-content:center;
       flex-wrap:wrap;
+    }
+
+    .tagline{
+      font-size:22px;
+      margin-top:60px; /* shifted further downward */
+      color:var(--accent-2);
+      font-family: "Cinzel", serif;
+      text-shadow:0 0 12px rgba(255,153,51,0.45);
+      letter-spacing:1px;
     }
 
     .btn{
@@ -188,7 +179,6 @@
         height:96px;
         padding:12px 16px;
         flex-direction:column;
-        align-items:center;
         justify-content:center;
       }
 
@@ -199,20 +189,13 @@
       header img.logo{
         width:120px;
         transform:none;
-        margin-top:70px; /* NEW: pushes logo downward for full visibility */
-      }
-
-      nav{
-        justify-content:center;
-        flex-wrap:wrap;
-        margin-top:-8px; /* ← move nav upward */
+        margin-top:70px;
       }
 
       .hero{
-       min-height:100vh;   /* ← CHANGE THIS LINE */
+       min-height:100vh;
        background-position:center center;
       }
-
 
       nav a{
         padding:6px 10px;
@@ -229,22 +212,18 @@
       src="https://raw.githubusercontent.com/FashionBox-crafted-for-your-vibe/the_box/ea4df26b5c3256928046f55c51d3119a6353b614/ChatGPT%20Image%20Feb%202%2C%202026%2C%2007_25_04%20PM.png"
       alt="THE BOX logo">
   </div>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#episodes">Episodes</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#about">About</a>
-  </nav>
 </header>
 
 <section class="hero" id="home">
   <div class="hero-content">
-    <p class="tagline">Some boxes are never meant to be opened.</p>
+
     <div class="controls">
       <button class="btn btn-primary" id="openTrailer">Watch Trailer</button>
       <a class="btn" href="#episodes">View Episodes</a>
     </div>
+
+    <p class="tagline">Some boxes are never meant to be opened.</p>
+
   </div>
 </section>
 
@@ -294,9 +273,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
